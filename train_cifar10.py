@@ -22,8 +22,11 @@ from utils import progress_bar
 parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Training')
 parser.add_argument('--lr', default=0.1, type=float, help='learning rate')
 parser.add_argument('--resume', '-r', action='store_true', help='resume from checkpoint')
-parser.add_argument('--net', default='res18')
+parser.add_argument('--net', default='basic',type=str,
+                    help='Model type: vgg16,...')
 parser.add_argument('--bs', default='128')
+parser.add_argument('--epochs', default=2, type=int, help='no of epochs')
+
 args = parser.parse_args()
 
 bs = int(args.bs)
@@ -67,6 +70,8 @@ elif args.net=='res50':
     net = ResNet50()
 elif args.net=='res101':
     net = ResNet101()
+elif args.net=='basic':
+    net = Basic('basic')
 # net = PreActResNet18()
 # net = GoogLeNet()
 # net = DenseNet121()

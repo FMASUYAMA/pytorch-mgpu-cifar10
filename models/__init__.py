@@ -13,3 +13,4 @@ from models.resnet import *
 #from preact_resnet import *
 #from mobilenet import *
 #from mobilenetv2 import *
+from models.basic import *
