@@ -25,7 +25,7 @@ parser.add_argument('--momentum',default=0.9,type=float)
 parser.add_argument('--resume', '-r', action='store_true', help='resume from checkpoint')
 parser.add_argument('--net', default='basic',type=str,
                     help='Model type: vgg16,...')
-parser.add_argument('--bs', default='128')
+parser.add_argument('--bs', default='128', help='batch_size')
 parser.add_argument('--epochs', default=2, type=int, help='no of epochs')
 
 args = parser.parse_args()
